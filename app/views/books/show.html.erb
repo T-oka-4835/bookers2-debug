@@ -25,7 +25,7 @@
 					<td><%= @book.body %></td>
 					<td>
 					  <i class ="fa fa-comment"></i>
-					  <%= @book.post_comments.count %>件のコメント%>
+					  <%= @book.post_comments.count %>件のコメント
 					</td>
 					<% if @book.favorited_by?(current_user) %>
 					  <td>
