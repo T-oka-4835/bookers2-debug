@@ -27,9 +27,9 @@
 			</tbody>
 		</table>
 	  <% unless @user.id == current_user.id %>
-	    <%= if (current_user.followed_by? (@user) && (@user.followed_by? current_user) %>
+	    <% if (current_user.followed_by? @user) && (@user.followed_by? current_user) %>
 	    <% if @isRoom == true %>
-	      <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg">チャットへ</a>
+	      <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg">チャットへ</a></p>
 	    <% else %>
 	      <%= form_with model: @room, local: true do |f| %>
 	        <%= f.fields_for @entry do |e| %>
@@ -37,7 +37,8 @@
 	        <% end %>
 	        <%= f.submit "チャットを始める", class:"btn btn-primary btn-lg user-show-chat" %>
 	      <% end %>
+	    <% end %>
+	    <% end %>
 	  <% end %>
 	</div>
 </div>
-
