@@ -28,7 +28,7 @@ class User < ApplicationRecord
   def following?(user)
     followings.include?(user)
   end
-  
+
 # チャット機能
   has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy
