@@ -38,7 +38,7 @@ class User < ApplicationRecord
   has_many :entries, dependent: :destroy
 
 # 通知機能
-　has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
+  has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 
   def create_notification_follow!(current_user)
