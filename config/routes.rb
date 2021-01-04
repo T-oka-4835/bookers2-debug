@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
   resources :messages, only: [:create]
   resources :rooms, only: [:create, :show]
+  resources :notifications, only: :index
   root 'homes#top'
   get 'home/about' => 'homes#about', as: 'about'
 end
