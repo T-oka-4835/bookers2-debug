@@ -30,12 +30,8 @@ class Book < ApplicationRecord
     end
   end
 
-  def create_notification_comment!(current_user, post_comment_id)
-  	temp_ids = Comment.select(:user_id).where(book_id).where.not(user_id: current_user.id).distinct
-  	temp_ids.each do |temp_id|
-  	  save_notification_comment!(current_user, post_comment_id, temp_id["user_id"])
-    end
-    save_notification_comment!(current_user, post_comment_id, user_id) if temp_ids.blank?
+  def create_notification_post_comment!(current_user, post_comment_id)
+  	  save_notification_comment!(current_user, post_comment_id, temp_id, user_id)
   end
 
   def save_notification_comment!(current_user, post_comment_id, visited_id)

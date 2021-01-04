@@ -11,6 +11,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li><%= link_to ' ユーザー', users_path, class: 'glyphicon glyphicon-user users' %></li>
+          <li><%= link_to "通知", notifications_path %></li>
           <li><%= link_to ' 投稿', books_path, class: 'glyphicon glyphicon-book books'%></li>
           <li><%= link_to ' ログアウト', destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out logout' %></li>
         <% else %>
