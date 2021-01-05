@@ -7,14 +7,12 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  margin: 33px;
 }
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  margin: 33px;
 }
 
 pre {
@@ -74,7 +72,7 @@ label {
 
 .top-title {
   font-size: 40px;
-  margin: 30px 0;
+  margin: 50px 0 30px;
 }
 
 .top-message {
@@ -84,4 +82,8 @@ label {
 
 .title-border{
   border-bottom: solid 5px #8ad8ff;
+}
+
+.about-container {
+  margin-top: 60px;
 }
