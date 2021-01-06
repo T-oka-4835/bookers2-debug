@@ -27,10 +27,6 @@ header{
 	}
 }
 
-.body{
-	margin-top:100px;
-}
-
 header .navbar-left span {
 	display:inline-block;
 }
@@ -46,4 +42,8 @@ header .navbar-left span {
 i {
 	color: #8ad8ff;
 	font-size: 60px;
+}
+
+.devise-container {
+	text-align: center;
 }
