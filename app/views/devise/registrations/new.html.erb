@@ -1,38 +1,36 @@
 <div class="devise-container">
-<h2>Bookersの新規登録</h2>
+<h2 class="devise-title">Bookersの新規登録</h2>
 
-<h4>ようこそ、Bookersへ</h4>
+<h4 class="devise-message">ようこそ、Bookersへ</h4>
 
 <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <!--name表示の追加-->
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, class: "name" %>
-  </div>
-  <!--name表示の追加-->
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, class: "email" %>
+  <div class="field devise-field">
+    <%= f.label :"ニックネーム" %>
+    <%= f.text_field :name, autofocus: true, class: "name devise-form" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
+  <div class="field devise-field">
+    <%= f.label :"メールアドレス" %>
+    <%= f.email_field :email, autofocus: true, class: "email devise-form" %>
+  </div>
+
+  <div class="field devise-field">
+    <%= f.label :"パスワード" %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+    <em>(<%= @minimum_password_length %>文字以上)</em>
+    <% end %>
     <%= f.password_field :password, autocomplete: "new-password", class: "password" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "password_confirm" %>
+  <div class="field devise-field">
+    <%= f.label :"パスワード(確認)" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "password_confirm devise-form" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up",class: "btn btn-success" %>
+    <%= f.submit "登録",class: "btn registration-btn" %>
   </div>
 <% end %>
 

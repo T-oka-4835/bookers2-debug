@@ -44,12 +44,6 @@ td {
   padding-right: 5px;
 }
 
-div {
-  &.field, &.actions {
-    margin-bottom: 10px;
-  }
-}
-
 #notice {
   color: green;
 }
@@ -87,5 +81,4 @@ label {
 .about-container {
   margin-top: 60px;
   text-align: center;
-  color: #FAFAFA;
 }
