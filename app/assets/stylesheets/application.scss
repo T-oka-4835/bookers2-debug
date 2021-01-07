@@ -64,6 +64,22 @@ i {
 	margin-bottom: 30px;
 }
 
-.devise-field {
-	margin-bottom: 20px;
+.devise-user {
+	margin: 0 auto;
+}
+
+form > .devise-user > dt {
+  display: inline-block;
+  margin: 5px 0 10px 350px;
+  font-size: 15px;
+  width: 200px;
+  float: left;
+}
+
+form > .devise-user > dd {
+  margin: 0 300px 25px 0;
+}
+
+.devise-btn {
+	margin-top: 50px;
 }

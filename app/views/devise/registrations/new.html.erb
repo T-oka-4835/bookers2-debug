@@ -6,36 +6,33 @@
 <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field devise-field">
+<div class="devise-user">
     <dt><%= f.label :"ニックネーム" %></dt>
     <dd>
       <%= f.text_field :name, autofocus: true, class: "name" %>
     </dd>
-  </div>
 
-  <div class="field devise-field">
     <dt><%= f.label :"メールアドレス" %></dt>
     <dd>
       <%= f.email_field :email, autofocus: true, class: "email" %>
     </dd>
-  </div>
 
-  <div class="field devise-field">
-    <dt><%= f.label :"パスワード" %></dt>
+    <dt><%= f.label :"パスワード" %>
     <% if @minimum_password_length %>
-      <dd><em>(<%= @minimum_password_length %>文字以上)</em></dd>
+      <em>(<%= @minimum_password_length %>文字以上)</em>
+    </dt>
     <% end %>
-    <%= f.password_field :password, autocomplete: "new-password", class: "password" %>
-  </div>
+    <dd>
+      <%= f.password_field :password, autocomplete: "new-password", class: "password" %>
+    </dd>
 
-  <div class="field devise-field">
     <dt><%= f.label :"パスワード(確認)" %></dt>
     <dd>
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "password_confirm" %>
     </dd>
-  </div>
+</div>
 
-  <div class="actions">
+  <div class="actions devise-btn">
     <%= f.submit "登録",class: "btn registration-btn" %>
   </div>
 <% end %>

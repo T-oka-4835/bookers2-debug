@@ -1,22 +1,25 @@
 <div class="devise-container">
 <h2 class="devise-title">ログイン</h2>
 
-<%= form_with model: @user, url: session_path(resource_name), local: true do |f| %>
-  <div class="field devise-field">
-    <dt><%= f.label :"ニックネーム" %></dt>
-    <dd>
-      <%= f.text_field :name, autofocus: true, class: "name" %>
-    </dd>
-  </div>
+<h4 class="devise-message">
+  Bookersに登録している方は、下記からログインしてください。<br>
+  まだ登録していない方は<%= link_to "こちら", user_registration_path, class:"login" %>から登録してください。
+</h4>
 
-  <div class="field devise-field">
-    <dt>
-      <%= f.label :"パスワード" %>
-    </dt>
-    <dd>
-      <%= f.password_field :password, autocomplete: "current-password", class: "password" %>
-    </dd>
-  </div>
+<%= form_with model: @user, url: session_path(resource_name), local: true do |f| %>
+<div class="devise-user">
+  <dt><%= f.label :"ニックネーム" %></dt>
+  <dd>
+    <%= f.text_field :name, autofocus: true, class: "name" %>
+  </dd>
+
+  <dt>
+    <%= f.label :"パスワード" %>
+  </dt>
+  <dd>
+    <%= f.password_field :password, autocomplete: "current-password", class: "password" %>
+  </dd>
+</div>
 
   <% if devise_mapping.rememberable? -%>
     <div class="field devise-field">
@@ -25,7 +28,7 @@
     </div>
   <% end -%>
 
-  <div class="actions">
+  <div class="actions devise-btn">
     <%= f.submit "ログイン", class: "btn btn-primary" %>
   </div>
 <% end %>
