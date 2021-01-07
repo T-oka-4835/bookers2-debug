@@ -3,13 +3,19 @@
 
 <%= form_with model: @user, url: session_path(resource_name), local: true do |f| %>
   <div class="field devise-field">
-    <%= f.label :"ニックネーム" %>
-    <%= f.text_field :name, autofocus: true, class: "name devise-form" %>
+    <dt><%= f.label :"ニックネーム" %></dt>
+    <dd>
+      <%= f.text_field :name, autofocus: true, class: "name" %>
+    </dd>
   </div>
 
   <div class="field devise-field">
-    <%= f.label :"パスワード" %>
-    <%= f.password_field :password, autocomplete: "current-password", class: "password devise-form" %>
+    <dt>
+      <%= f.label :"パスワード" %>
+    </dt>
+    <dd>
+      <%= f.password_field :password, autocomplete: "current-password", class: "password" %>
+    </dd>
   </div>
 
   <% if devise_mapping.rememberable? -%>

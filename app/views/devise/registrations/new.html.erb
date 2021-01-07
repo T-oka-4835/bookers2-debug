@@ -7,26 +7,32 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field devise-field">
-    <%= f.label :"ニックネーム" %>
-    <%= f.text_field :name, autofocus: true, class: "name devise-form" %>
+    <dt><%= f.label :"ニックネーム" %></dt>
+    <dd>
+      <%= f.text_field :name, autofocus: true, class: "name" %>
+    </dd>
   </div>
 
   <div class="field devise-field">
-    <%= f.label :"メールアドレス" %>
-    <%= f.email_field :email, autofocus: true, class: "email devise-form" %>
+    <dt><%= f.label :"メールアドレス" %></dt>
+    <dd>
+      <%= f.email_field :email, autofocus: true, class: "email" %>
+    </dd>
   </div>
 
   <div class="field devise-field">
-    <%= f.label :"パスワード" %>
+    <dt><%= f.label :"パスワード" %></dt>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %>文字以上)</em>
+      <dd><em>(<%= @minimum_password_length %>文字以上)</em></dd>
     <% end %>
     <%= f.password_field :password, autocomplete: "new-password", class: "password" %>
   </div>
 
   <div class="field devise-field">
-    <%= f.label :"パスワード(確認)" %>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "password_confirm devise-form" %>
+    <dt><%= f.label :"パスワード(確認)" %></dt>
+    <dd>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "password_confirm" %>
+    </dd>
   </div>
 
   <div class="actions">
