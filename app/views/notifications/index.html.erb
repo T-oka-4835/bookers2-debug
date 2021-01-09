@@ -10,13 +10,13 @@
                 <%= "あなたをフォローしました" %>
                 <i class="far fa-handshake"></i>
               <% when "comment" then %>
-                <% if notification.stress.user.id == current_user.id %>
-                  <%= link_to "あなたの投稿", stress_path(notification.stress) %>
+                <% if notification.book.user.id == current_user.id %>
+                  <%= link_to "あなたの投稿", book_path(notification.book) %>
                     にコメントしました
                   <i class="far fa-comment"></i>
                 <% end %>
               <% when "favorite" then %>
-                  <%= link_to "あなたの投稿", stress_path(notification.stress) %>
+                  <%= link_to "あなたの投稿", book_path(notification.book) %>
                     にいいねしました
                   <i class="fas fa-heart"></i>
               <% end %>

@@ -5,9 +5,9 @@ class PostCommentsController < ApplicationController
     comment = current_user.post_comments.new(post_comment_params)
     comment.book_id = book.id
     if comment.save
-      book.create_notification_comment!(current_user, comment.id)
+      book.create_notification_post_comment!(current_user, comment.id)
       redirect_to book_path(book)
-    end 
+    end
   end
 
   def destroy

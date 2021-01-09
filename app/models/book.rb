@@ -31,20 +31,20 @@ class Book < ApplicationRecord
   end
 
   def create_notification_post_comment!(current_user, post_comment_id)
-  	  save_notification_comment!(current_user, post_comment_id, temp_id, user_id)
+    save_notification_comment!(current_user, post_comment_id, user_id)
   end
 
   def save_notification_comment!(current_user, post_comment_id, visited_id)
-  	    notification = current_user.active_notifications.new(
-  	      book_id: id,
-  	      post_comment_id: post_comment_id,
-  	      visited_id: visited_id,
-  	      action: "comment"
-  	    )
-
-  	  if notification.visitor_id == notification.visited_id
-  	  	 notification.checked = true
-  	  end
-  	   notification.save if notification.valid?
+      notification = current_user.active_notifications.new(
+      book_id: id,
+      post_comment_id: post_comment_id,
+      visited_id: visited_id,
+      action: "comment"
+      )
+      if notification.visitor_id == notification.visited_id
+        notification.checked = true
+      end
+      notification.save if notification.valid?
   end
+
 end
