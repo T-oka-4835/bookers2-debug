@@ -10,7 +10,7 @@ class Book < ApplicationRecord
 		favorites.where(user_id: user.id).exists?
 	end
 
-# 通知機能
+	# 通知機能
   has_many :notifications, dependent: :destroy
 
   def create_notification_like?(current_user)
