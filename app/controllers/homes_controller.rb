@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
   def top
-    @books = Book.all
+    @books = Book.order("RANDOM()").limit(4)
   end
 
   def about

@@ -54,12 +54,13 @@
   </div>
 </div>
 
-<h3 class="pickup">Bookersピックアップ</h3>
-<div>
-  <tbody>
+<div class="row pickup-container">
+  <h3 class="pickup">Bookersピックアップ</h3>
     <% @books.each do |book| %>
-    <tr><%= book.title %></tr>
-    <tr><%= book.body %></tr>
+    <div class="col-lg-3">
+      <div><%= book.user.name %></div>
+      <div><%= book.title %></div>
+      <div><%= book.body %></div><td>
+    </div>
     <% end %>
-  </tbody>
 </div>
