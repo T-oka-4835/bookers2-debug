@@ -53,3 +53,13 @@
     </p>
   </div>
 </div>
+
+<h3 class="pickup">Bookersピックアップ</h3>
+<div>
+  <tbody>
+    <% @books.each do |book| %>
+    <tr><%= book.title %></tr>
+    <tr><%= book.body %></tr>
+    <% end %>
+  </tbody>
+</div>
