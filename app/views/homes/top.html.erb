@@ -64,3 +64,15 @@
     </div>
     <% end %>
 </div>
+
+<!--ランキング機能-->
+<div class="row pickup-container">
+  <h3 class="pickup">Bookersランキング</h3>
+    <% @ranks.each do |rank| %>
+    <div class="col-lg-3">
+      <div><%= rank.user.name %></div>
+      <div><%= rank.title %></div>
+      <div><%= rank.body %></div><td>
+    </div>
+    <% end %>
+</div>
