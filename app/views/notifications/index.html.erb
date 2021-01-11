@@ -1,10 +1,18 @@
-<% if @notifications.exists? %>
-    <table class="table notification-table" style="width: 60%;">
-      <% @notifications.each do |notification| %>
-        <tr>
-          <td>
-            <i class="far fa-user-circle"></i>
-            <%= notification.visitor.name %>さんが
+<% if @notifications.empty? %>
+  <div class="no-notification">
+    <h2>
+      現在通知はありません！<br>
+      他のユーザーにフォロー、いいね、コメントされると、<br>
+      ここに通知が表示されます！
+    </h2>
+  </div>
+<% else %>
+  <table class="table notification-table" style="width: 60%;">
+    <% @notifications.each do |notification| %>
+      <tr>
+        <td>
+        <i class="far fa-user-circle"></i>
+          <%= notification.visitor.name %>さんが
             <% case notification.action %>
               <% when 'follow' then %>
                 <%= "あなたをフォローしました" %>
@@ -24,13 +32,5 @@
         </tr>
       <% end %>
     </table>
-  <% else %>
-    <div class="no-notification">
-      <h2>
-        現在通知はありません！<br>
-        他のユーザーにフォロー、いいね、コメントされると、<br>
-        ここに通知が表示されます！
-      </h2>
-    </div>
   <% end %>
 </div>
