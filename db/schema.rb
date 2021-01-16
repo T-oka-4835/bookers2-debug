@@ -63,7 +63,6 @@ ActiveRecord::Schema.define(version: 2021_01_03_042252) do
     t.integer "post_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "name"
     t.integer "book_id"
   end
 
