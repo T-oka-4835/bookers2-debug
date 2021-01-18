@@ -58,6 +58,9 @@
   <h3 class="pickup">Bookersピックアップ</h3>
     <% @books.each do |book| %>
     <div class="col-lg-3">
+      <%= link_to book_path(book) do %>
+			  <%= attachment_image_tag(book, :image, :fill, 100, 100, fallback: "no-image-mini.jpg") %><br>
+			<% end %>
       <div><%= book.user.name %></div>
       <div><%= book.title %></div>
       <div><%= book.body %></div><td>
@@ -68,8 +71,11 @@
 <!--ランキング機能-->
 <div class="row pickup-container">
   <h3 class="pickup">Bookersランキング</h3>
-    <% @ranks.each do |rank| %>
+    <% @ranks.each do |rank| %>s
     <div class="col-lg-3">
+      <%= link_to rank_path(rank) do %>
+			  <%= attachment_image_tag(rank, :image, :fill, 100, 100, fallback: "no-image-mini.jpg") %><br>
+			<% end %>
       <div><%= rank.user.name %></div>
       <div><%= rank.title %></div>
       <div><%= rank.body %></div><td>
