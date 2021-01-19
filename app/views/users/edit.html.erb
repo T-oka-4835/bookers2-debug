@@ -1,4 +1,4 @@
-<h2>User info</h2>
+<h2>ユーザー情報更新</h2>
 
 <%= form_with model:@user, local: true do |f| %>
 
@@ -16,17 +16,17 @@
 	<!-- エラーメッセージ表示-->
 
 	<div class="field">
-		<%= f.label :name %>
+		<%= f.label :"ユーザー名" %>
 		<%= f.text_field :name, class: "name" %>
 	</div>
 
 	<div class="field">
-		<%= f.label :image %>
+		<%= f.label :"画像" %>
 		<%= f.attachment_field :profile_image, class: "user_image" %>
 	</div>
 
 	<div class="field">
-		<%= f.label :introduction %>
+		<%= f.label :"自己紹介" %>
 		<%= f.text_area :introduction, class: "introduction" %>
 	</div>
 
