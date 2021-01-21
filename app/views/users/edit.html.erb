@@ -1,39 +1,37 @@
 <div class="devise-container">
-<h2 class="devise-title">ユーザー情報更新</h2>
+  <h2 class="devise-title">ユーザー情報更新</h2>
 
-<%= form_with model:@user, local: true do |f| %>
-
-	<!-- エラーメッセージ表示-->
-	<% if @user.errors.any? %>
-		<div id="error_explanation">
-			<h3><%= @user.errors.count %>error prohibited this obj from being saved:</h3>
-			<ul>
-				<% @user.errors.full_messages.each do |message| %>
-				<li><%= message %></li>
-				<% end %>
-			</ul>
-		</div>
+  <%= form_with model:@user, local: true do |f| %>
+    <!-- エラーメッセージ表示-->
+    <% if @user.errors.any? %>
+	  <div id="error_explanation">
+	    <h3><%= @user.errors.count %>error prohibited this obj from being saved:</h3>
+		  <ul>
+		    <% @user.errors.full_messages.each do |message| %>
+			  <li><%= message %></li>
+			<% end %>
+		  </ul>
+	  </div>
 	<% end %>
 	<!-- エラーメッセージ表示-->
 
-	<div class="field">
-		<%= f.label :"ユーザー名" %>
-		<%= f.text_field :name, class: "name" %>
+    <div class="field">
+	  <%= f.label :"ユーザー名" %>
+      <%= f.text_field :name, class: "name" %>
 	</div>
 
 	<div class="field">
-		<%= f.label :"画像" %>
-		<%= f.attachment_field :profile_image, class: "user_image" %>
+	  <%= f.label :"画像" %>
+      <%= f.attachment_field :profile_image, class: "user_image" %>
 	</div>
 
 	<div class="field">
-		<%= f.label :"自己紹介" %>
-		<%= f.text_area :introduction, class: "introduction" %>
+	  <%= f.label :"自己紹介" %>
+      <%= f.text_area :introduction, class: "introduction" %>
 	</div>
 
 	<div class="actions">
-		<%= f.submit %>
+	  <%= f.submit %>
 	</div>
-
-<% end %>
+  <% end %>
 </div>
