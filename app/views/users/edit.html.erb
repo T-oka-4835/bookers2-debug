@@ -4,34 +4,34 @@
   <%= form_with model:@user, local: true do |f| %>
     <!-- エラーメッセージ表示-->
     <% if @user.errors.any? %>
-	  <div id="error_explanation">
-	    <h3><%= @user.errors.count %>error prohibited this obj from being saved:</h3>
-		  <ul>
-		    <% @user.errors.full_messages.each do |message| %>
-			  <li><%= message %></li>
-			<% end %>
-		  </ul>
-	  </div>
-	<% end %>
+	    <div id="error_explanation">
+	      <h3><%= @user.errors.count %>error prohibited this obj from being saved:</h3>
+		    <ul>
+		      <% @user.errors.full_messages.each do |message| %>
+			    <li><%= message %></li>
+			  <% end %>
+		    </ul>
+	    </div>
+	  <% end %>
 	<!-- エラーメッセージ表示-->
 
-    <div class="field">
-	  <%= f.label :"ユーザー名" %>
+    <div class="field edit-field">
+	    <%= f.label :"ユーザー名" %>
       <%= f.text_field :name, class: "name" %>
-	</div>
+	  </div>
 
-	<div class="field">
-	  <%= f.label :"画像" %>
+	  <div class="field edit-field">
+	    <%= f.label :"画像" %>
       <%= f.attachment_field :profile_image, class: "user_image" %>
-	</div>
+	  </div>
 
-	<div class="field">
-	  <%= f.label :"自己紹介" %>
+	  <div class="field edit-field">
+	    <%= f.label :"自己紹介" %>
       <%= f.text_area :introduction, class: "introduction" %>
-	</div>
+	  </div>
 
-	<div class="actions">
-	  <%= f.submit %>
-	</div>
+	  <div class="actions edit-field">
+	    <%= f.submit %>
+	  </div>
   <% end %>
 </div>
