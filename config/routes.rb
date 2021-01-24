@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'calenders/index'
   devise_for :users
   resources :users, only: [:show,:index,:edit,:update] do
     resource :relationships, only: [:create, :destroy]
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
   resources :messages, only: [:create]
   resources :rooms, only: [:create, :show]
   resources :notifications, only: :index
+  resources :calenders
   root 'homes#top'
   get 'home/about' => 'homes#about', as: 'about'
 end
