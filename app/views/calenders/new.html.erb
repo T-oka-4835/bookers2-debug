@@ -1,0 +1,21 @@
+<%= form_with(model: @calender, local: true) do |f| %>
+  <div class="title">
+    <%= f.label :'タイトル'
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="time">
+    <%= f.label :"開始時間" %>
+    <%= f.datetime_select :start_time %>
+  </div>
+
+  <div>
+    <%= f.label : "スケジュール" %>
+    <%= f.text_field :content %>
+  </div>
+
+  <div class="submit">
+    <%= f.submit %>
+  </div>
+
+<% end %>

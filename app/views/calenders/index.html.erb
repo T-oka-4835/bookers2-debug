@@ -1,2 +1,14 @@
-<h1>Calenders#index</h1>
-<p>Find me in app/views/calenders/index.html.erb</p>
+<h1>今後のスケジュール</h1>
+
+<%= link_to '予定を追加する', new_calender_path %>
+
+<%= month_calendar do |date, calendars| %>
+  <%= date.day %>
+
+  <% calendars.each do |calender| %>
+    <div>
+      <%= link_to calender.title, calender %>
+    </div>
+  <% end %>
+  
+<% end %>
