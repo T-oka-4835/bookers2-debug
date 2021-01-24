@@ -1,45 +1,45 @@
 class CalendersController < ApplicationController
-  
+
   def index
     @calender = Calender.all
   end
-  
+
   def show
     @calender = Calender.find(params[:id])
-  end 
-    
+  end
+
   def new
     @calender = Calender.new
-  end 
-  
-  def create 
+  end
+
+  def create
     Calender.create(calender_params)
-    redirect_to calender_path 
-  end 
-  
-  def edit 
+    redirect_to calenders_path
+  end
+
+  def edit
     @calender = Calender.find(params[:id])
-  end 
-  
+  end
+
   def update
     @calender = Calender.find(params[:id])
-    if @calender.update(calender_parameter)
+    if @calender.update(calender_params)
       redirect_to calenders_path, notice: "編集しました"
-    else 
+    else
       render 'edit'
-    end 
-  end 
-    
+    end
+  end
+
   def destroy
     @calender = Calender.find(params[:id])
-    @calender.destroy 
+    @calender.destroy
     redirect_to calenders_path, notice:"削除しました"
-  end 
-  
-  private 
-  
-  def calender_parameter 
+  end
+
+  private
+
+  def calender_params
     params.require(:calender).permit(:title, :content, :start_time)
-  end 
-  
+  end
+
 end
