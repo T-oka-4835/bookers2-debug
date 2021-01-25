@@ -2,13 +2,12 @@
 
 <%= link_to '予定を追加する', new_calender_path %>
 
-<%= month_calendar do |date, calendars| %>
+<%= month_calendar events: @calenders do |date, calenders| %>
   <%= date.day %>
 
-  <% calendars.each do |calender| %>
+  <% calenders.each do |calender| %>
     <div>
-      <%= link_to calender.title, calender %>
+      <%= link_to calender.title, calender_path(calender) %>
     </div>
   <% end %>
-  
 <% end %>
