@@ -5,7 +5,7 @@ class HomesController < ApplicationController
   end
   
   def search 
-    @book = Book.search(params[:search])
+    @books = Book.search(params[:search])
   end 
 
   def about
